@@ -1,20 +1,20 @@
 # Let's put all students into an array
 students = [
-  "Andrew Johnson",
-  "Kevin Dorking",
-  "John Ford",
-  "Sam Cox",
-  "Mark Spencer",
-  "Alfred Tarski",
+ {:name => "Andrew Johnson", :cohort => :november},
+ {:name => "Kevin Dorking", :cohort =>:november},
+ {:name => "John Ford", :cohort =>:november},
+ {:name => "Sam Cox", :cohort =>:november},
+ {:name => "Mark Spencer", :cohort =>:november},
+ {:name => "Alfred Tarski", :cohort =>:november},
 ]
 def print_header
   puts "The students of cohort at Makers Academy"
   puts "______________________________________"
 end
 
-def print(names)
-  names.each do |names|
-    puts names
+def print(students)
+  students.each do |student|
+    puts "#{student[:name]} (#{student[:cohort]} cohort)"
   end
 end
 def print_footer(names)
