@@ -1,12 +1,12 @@
 def print_header
-  puts "The students of cohort at Makers Academy"
-  puts "______________________________________"
+  puts "The students of cohort at Makers Academy".center(120)
+  puts "______________________________________".center(120)
 end
 
 def prints(students)
-       students.each do |student|
-           puts "   #{student[:name]} (#{student[:cohort]} cohort his hobby is #{student[:hobby]} and height is #{student[:height]} )"
-       end 
+ students.each do |student|
+  puts " #{student[:name]} (#{student[:cohort]} cohort his hobby is #{student[:hobby]} and height is #{student[:height]})".center(120)
+ end 
 end
 
 def print_footer(names)
