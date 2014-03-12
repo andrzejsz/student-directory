@@ -1,35 +1,48 @@
 def print_header
-  print "The students of cohort at Makers Academy\n"
-  print "______________________________________\n"
+  puts "The students of cohort at Makers Academy"
+  puts "______________________________________"
 end
 
 def prints(students)
-	j = students.length 
-         i = 0
-      while i < j 
-           print "   #{students[i][:name]} (#{students[i][:cohort]} cohort)\n"
-        i += 1 
+       students.each do |student|
+           puts "   #{student[:name]} (#{student[:cohort]} cohort his hobby is #{student[:hobby]} and height is #{student[:height]} )"
        end 
 end
 
 def print_footer(names)
-  print "Overall, we have #{names.length} great students\n"
+  puts "Overall, we have #{names.length} great students"
 end
 
 def input_students
-    print "Please enter the names of the students\n"
-    print "To finish, just hit enter twice\n"
+    puts "Please enter the names of the students"
+    puts "To finish, just hit enter twice"
     # create an empty array
     students = []
     # get the first name
     name = gets.chomp
+    puts "Please enter your cohort"
+    cohort = gets.chomp
+    puts "Please enter your hobby"
+    hobby = gets.chomp
+    puts "Please enter your height"
+    height = gets.chomp
     # while the name is not empty, repeat this code 
     while !name.empty? do
       # add the student hash to the array
-      students << {:name  => name, :cohort=> :november}
-      print "Now we have #{students.length} students\n"
+      students << {:name  => name, :cohort=> cohort,:hobby => hobby,:height => height }
+      puts "Now we have #{students.length} students"
       # get another name from the user
+      puts "Another name please"
       name = gets.chomp
+      if name.empty? then
+        break 
+      end
+      puts "Provide again cohort for next student"
+      cohort = gets.chomp
+      puts "Provide again hobby for next student"
+      hobby = gets.chomp
+      puts "Provide again height for next student"
+      height = gets.chomp
     end
 
     #return the array of students
