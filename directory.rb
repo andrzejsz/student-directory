@@ -4,9 +4,13 @@ def print_header
 end
 
 def prints(students)
- students.each do |student|
-  puts " #{student[:name]} (#{student[:cohort]} cohort his hobby is #{student[:hobby]} and height is #{student[:height]})".center(120)
+newstudarr = students.group_by do |student|
+# puts " #{student[:name]} (#{student[:cohort]} cohort his hobby is #{student[:hobby]} and height is #{student[:height]})".center(120)
+student[:cohort]
  end 
+   newstudarr.each do |arr|
+     puts " #{arr} "
+end
 end
 
 def print_footer(names)
