@@ -4,9 +4,7 @@ def print_header
 end
 
 def prints(students)
-newstudarr = students.group_by do |student|
-# puts " #{student[:name]} (#{student[:cohort]} cohort his hobby is #{student[:hobby]} and height is #{student[:height]})".center(120)
-student[:cohort]
+newstudarr = students.select do |student| student[:cohort] == "january"
  end 
    newstudarr.each do |arr|
      puts " #{arr} "
